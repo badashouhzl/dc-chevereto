@@ -1,0 +1,36 @@
+
+services:
+  chevereto:
+    image: ${image}
+    container_name: 'chevereto'
+    restart: ${restart}
+    ports:
+      - ${port}:80
+    volumes: 
+      - /etc/localtime:/etc/localtime
+      - vol-chevereto:/var/www/html/images:rw
+    # command: ["sleep", "10m"]         # 调试问题打开用
+    environment:
+      CHEVERETO_DB_HOST:          # mysql 主机 ip
+      CHEVERETO_DB_PORT:          # mysql 服务端口
+      CHEVERETO_DB_USERNAME:      # mysql 用户名
+      CHEVERETO_DB_PASSWORD:      # mysql 密码
+      CHEVERETO_DB_NAME:          # mysql 库名
+      CHEVERETO_DB_PREFIX:        # 表名前缀 默认也是 chv_
+    networks:
+      net-custom:
+        # ipv4_address:     # 指定 ip
+        aliases: 
+          - net-chevereto
+
+
+networks: 
+  net-custom:
+    name: ${network}
+    external: true 
+
+    
+volumes:
+  vol-chevereto:
+    external: true
+
