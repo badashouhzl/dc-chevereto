@@ -19,7 +19,7 @@ services:
       CHEVERETO_DB_PREFIX:        # 表名前缀 默认也是 chv_
     networks:
       net-custom:
-        # ipv4_address:     # 指定 ip
+        # ipv4_address: 172.19.254.199    # 指定 ip
         aliases: 
           - net-chevereto
 
