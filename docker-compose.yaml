@@ -8,8 +8,8 @@ services:
       - ${port}:80
     volumes: 
       - /etc/localtime:/etc/localtime
-      - vol-chevereto:/config:rw
-      - vol-chevereto:/var/www/html/images:rw
+      - ${path}/conf:/config:rw
+      - vol-chevereto:/data:rw
     # command: ["sleep", "10m"]         # 调试问题打开用
     environment:
       PUID: 1000

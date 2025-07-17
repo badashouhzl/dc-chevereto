@@ -39,10 +39,13 @@ docker compose up -d
 ```
 
 ## 容器数据备份与恢复
-```shell
-./ctrl help
-```
-查看使用说明
+1. 备份数据卷 vol-chevereto
+	```shell
+	./ctrl help
+	```
+	查看使用说明
+1. 备份数据库 chevereto
+
 
 ## 网站设置
 推荐设置以下内容

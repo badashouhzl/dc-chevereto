@@ -24,6 +24,7 @@ EOF
 init() {
 	# 创建卷
 	echo "----- create volume ------"
+	mkdir -p conf
 	mkVolume "vol-chevereto"
 }
 
